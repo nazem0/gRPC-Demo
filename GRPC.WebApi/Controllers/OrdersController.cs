@@ -40,7 +40,7 @@ namespace GRPC.WebApi.Controllers
                 });
                 return StatusCode(withdrawalResult.StatusCode, withdrawalResult.Message);
             }
-            return Ok($"Order completed successfully!, Paid {withdrawalRequest.PaymentAmount}.");
+            return Ok($"Order completed successfully!, Paid ${withdrawalRequest.PaymentAmount}.");
         }
     }
 }
