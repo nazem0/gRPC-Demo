@@ -7,13 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var services = builder.Services;
-services.AddScoped(sp =>
+services.AddSingleton(sp =>
 {
     var paymentChannel = GrpcChannel.ForAddress("https://localhost:7103");
     var paymentService = new PaymentGrpcService.PaymentGrpcServiceClient(paymentChannel);
     return paymentService;
 });
-services.AddScoped(sp =>
+services.AddSingleton(sp =>
 {
     var stockChannel = GrpcChannel.ForAddress("https://localhost:7253");
     var stockService = new StockGrpcService.StockGrpcServiceClient(stockChannel);
