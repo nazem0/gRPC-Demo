@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "GRPC.WebApi.Protos";
+service AgeCalculatorGrpcService{
+	rpc CalculateAge (AgeCalculatorRequest) returns (AgeCalculatorResponse);
+}
+
+message AgeCalculatorRequest{
+	Date birthDate =1;
+}
+message Date {
+	int32 year = 1;
+	int32 month= 2;
+	int32 day = 3;
+
+}
+message AgeCalculatorResponse{
+	int32 years = 1;
+}

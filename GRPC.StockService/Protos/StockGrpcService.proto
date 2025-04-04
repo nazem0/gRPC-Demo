@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option csharp_namespace = "Demo.Grpc.StockService.Protos";
+service StockGrpcService{
+	rpc Sell (SellRequest) returns (SellResponse);
+	rpc Restock (RestockRequest) returns (RestockResponse);
+}
+
+message SellRequest{
+	int32 ProductId = 1;
+	double Quantity = 2;
+}
+
+message SellResponse{
+	bool IsSuccess = 1;
+	string Message = 2;
+	int32 StatusCode = 3;
+	double Quantity = 4;
+	double UnitCost = 5;
+}
+
+message RestockRequest{
+	int32 ProductId = 1;
+	double Quantity = 2;
+	double UnitCost = 3;
+}
+
+message RestockResponse{
+	bool IsSuccess = 1;
+	string Message = 2;
+	int32 StatusCode = 3;
+	double Quantity = 4;
+	double UnitCost = 5;
+}

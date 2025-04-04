@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Demo.Grpc.PaymentService.Protos";
+
+service PaymentGrpcService{
+	rpc Withdraw (WithdrawalRequest) returns (WithdrawalResponse);
+}
+
+message WithdrawalRequest{
+	int32 UserId = 1;
+	double PaymentAmount = 2;
+}
+
+message WithdrawalResponse {
+	bool IsSuccess = 1;
+	string Message = 2;
+	int32 StatusCode = 3;
+	double Balance = 4;
+}
