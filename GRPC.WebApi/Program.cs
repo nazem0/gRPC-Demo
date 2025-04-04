@@ -7,17 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var services = builder.Services;
-services.AddSingleton(sp =>
+services.AddGrpcClient<PaymentGrpcService.PaymentGrpcServiceClient>(o =>
 {
-    var paymentChannel = GrpcChannel.ForAddress("https://localhost:7103");
-    var paymentService = new PaymentGrpcService.PaymentGrpcServiceClient(paymentChannel);
-    return paymentService;
+    o.Address = new Uri("https://localhost:7103");
 });
-services.AddSingleton(sp =>
+
+services.AddGrpcClient<StockGrpcService.StockGrpcServiceClient>(o =>
 {
-    var stockChannel = GrpcChannel.ForAddress("https://localhost:7253");
-    var stockService = new StockGrpcService.StockGrpcServiceClient(stockChannel);
-    return stockService;
+    o.Address = new Uri("https://localhost:7253");
 });
 services.AddGrpc().AddJsonTranscoding();
 services.AddGrpcReflection();
