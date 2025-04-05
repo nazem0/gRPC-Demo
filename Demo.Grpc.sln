@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Grpc.ConsoleClient", "GRPC.Console.Client\Demo.Grpc.ConsoleClient.csproj", "{A8FC2F30-1BE7-447B-AA0C-4CDD1468F911}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Grpc.ConsoleClient", "Demo.Grpc.Console.Client\Demo.Grpc.ConsoleClient.csproj", "{A8FC2F30-1BE7-447B-AA0C-4CDD1468F911}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Grpc.WebApi", "GRPC.WebApi\Demo.Grpc.WebApi.csproj", "{445BD8FD-35C1-4C53-8C04-3BC8A53B2697}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Grpc.WebApi", "Demo.Grpc.WebApi\Demo.Grpc.WebApi.csproj", "{445BD8FD-35C1-4C53-8C04-3BC8A53B2697}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Grpc.PaymentService", "GRPC.PaymentService\Demo.Grpc.PaymentService.csproj", "{17BE51FB-7E2D-479D-86CD-D7ADCE7CC1E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Grpc.PaymentService", "Demo.Grpc.PaymentService\Demo.Grpc.PaymentService.csproj", "{17BE51FB-7E2D-479D-86CD-D7ADCE7CC1E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Grpc.StockService", "GRPC.StockService\Demo.Grpc.StockService.csproj", "{B50225A7-FFFD-4ABF-9088-C0898288F2E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Grpc.StockService", "Demo.Grpc.StockService\Demo.Grpc.StockService.csproj", "{B50225A7-FFFD-4ABF-9088-C0898288F2E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

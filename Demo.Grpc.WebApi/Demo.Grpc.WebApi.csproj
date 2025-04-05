@@ -7,10 +7,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Protobuf Include="..\GRPC.PaymentService\Protos\PaymentGrpcService.proto" GrpcServices="Client">
+		<Protobuf Include="..\Demo.Grpc.PaymentService\Protos\PaymentGrpcService.proto" GrpcServices="Client">
 		  <Link>Protos\PaymentGrpcService.proto</Link>
 		</Protobuf>
-		<Protobuf Include="..\GRPC.StockService\Protos\StockGrpcService.proto" GrpcServices="Client">
+		<Protobuf Include="..\Demo.Grpc.StockService\Protos\StockGrpcService.proto" GrpcServices="Client">
 		  <Link>Protos\StockGrpcService.proto</Link>
 		</Protobuf>
 		<Protobuf Include="Protos\AgeCalculatorGrpcService.proto" GrpcServices="Server" />
