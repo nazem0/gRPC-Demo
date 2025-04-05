@@ -1,7 +1,9 @@
 ﻿using Demo.Grpc.PaymentService.Protos;
 using Demo.Grpc.StockService.Protos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace GRPC.WebApi.Controllers
 {
@@ -11,9 +13,10 @@ namespace GRPC.WebApi.Controllers
         StockGrpcService.StockGrpcServiceClient stockService,
         PaymentGrpcService.PaymentGrpcServiceClient paymentService) : ControllerBase
     {
-        [HttpPost]
+        [HttpPost, Authorize]
         public async Task<IActionResult> Order(OrdeRequsetDto input)
         {
+            int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
             var sellResult = await stockService.SellAsync(new SellRequest
             {
                 ProductId = input.ProductId,
@@ -27,7 +30,7 @@ namespace GRPC.WebApi.Controllers
             var withdrawalRequest = new WithdrawalRequest
             {
                 PaymentAmount = sellResult.UnitCost * input.Quantity * revenueMultiplier,
-                UserId = input.UserId,
+                UserId = userId,
             };
             var withdrawalResult = await paymentService.WithdrawAsync(withdrawalRequest);
             if (!withdrawalResult.IsSuccess)
